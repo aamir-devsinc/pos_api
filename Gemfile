@@ -16,6 +16,7 @@ gem 'puma', '~> 3.11'
 gem 'devise_token_auth'
 
 gem 'apartment'
+gem 'ancestry'
 
 # gem 'figaro'
 
