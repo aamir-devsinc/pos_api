@@ -3,11 +3,13 @@ class Api::V1::InvoicesController < ApplicationController
   before_action :set_invoice, only: [:show]
 
   def index
-    render json: all_invoices
+    @invoices = Invoice.paginate(page: params[:page], per_page: 10)
+    json = Invoice.paginate(page: params[:page], per_page: 10).to_json(:include => :sold_items)
+    render json: {invoices: JSON.parse(json), total_pages: @invoices.total_pages}
   end
 
   def show
-    render json:(@invoice.attributes.merge("sold_items":@invoice.sold_items))
+    render json:(@invoice.attributes.merge("sold_items": @invoices.sold_items))
   end
 
   def create
