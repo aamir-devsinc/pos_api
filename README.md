@@ -1,4 +1,4 @@
-# POS DESVINC_api
+# POS API
   point of sales api by devsinc.
 
 ## System Requirements
@@ -28,3 +28,5 @@
 ## Built With
 *  [devise_token_auth][1.1.0]
 *  [apartment][2.2.1]
+
+✌️🍆
